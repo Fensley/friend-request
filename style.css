@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --background: #005;
+  --primary: #88d5bf;
+  --secondary: #5d6bf8;
+  --third: #98cceb;
+}
+body {
+  background-color: #dae0f8;
+  font-size: 12px;
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.big {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+main {
+  transition: all 1s ease-in-out;
+  animation: morph 8s ease-in-out infinite;
+  background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+  padding: 20px;
+  width: 413px;
+  height: 332px;
+  margin-top: 10px;
+}
+.container {
+  height: 100%;
+}
+.card {
+  display: flex;
+  margin-top: 10px;
+}
+.name {
+  margin-left: 10px;
+}
+
+button {
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  right: -220px;
+  bottom: -34px;
+  width: 90px;
+  height: 30px;
+  background-color: white;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+button:hover {
+  opacity: 0.8;
+}
+img {
+  position: relative;
+  bottom: -23px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  left: -2px;
+}
+.container > p {
+  font-weight: bold;
+  font-size: 17px;
+}
+.container > p span {
+  cursor: pointer;
+  position: relative;
+  left: 47%;
+  font-weight: normal;
+}
+.active {
+  background-color: rgb(33, 33, 131);
+  color: white;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(
+      45deg,
+      var(--primary) 0%,
+      var(--secondary) 100%
+    );
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%);
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(
+      45deg,
+      var(--primary) 0%,
+      var(--secondary) 100%
+    );
+  }
+}
